@@ -112,8 +112,9 @@ function convertToRealDate(date) {
     const timePieces = pieces[1].split(':');
 
     const hour = parseInt(timePieces[0]) + ((pieces[2] === 'PM') ? 12 : 0);
+    const hourString = hour < 10 ? `0${hour}` : hour.toString();
 
-    return `${day}T${hour}${timePieces[1]}00`;
+    return `${day}T${hourString}${timePieces[1]}00`;
 
 }
 
